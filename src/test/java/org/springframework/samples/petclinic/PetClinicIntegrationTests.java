@@ -17,7 +17,6 @@
 package org.springframework.samples.petclinic;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,11 +47,6 @@ public class PetClinicIntegrationTests {
 	void testFindAll() throws Exception {
 		vets.findAll();
 		vets.findAll(); // served from cache
-	}
-
-	@Test
-	void testDummyAssertion() {
-		assertEquals("1", "2");
 	}
 	
 	@Test
