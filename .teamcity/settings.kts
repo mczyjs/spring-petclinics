@@ -5,6 +5,8 @@ import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildFeatures.pullRequests
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.projectFeatures.jira
+import jetbrains.buildServer.configs.kotlin.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -32,7 +34,10 @@ version = "2024.03"
 
 project {
 
+    vcsRoot(HttpsGithubComMczyjsSpringPetclinicsRefsHeadsMain1)
+
     buildType(Build)
+    buildType(DeployToCloud)
 
     features {
         jira {
@@ -85,5 +90,34 @@ object Build : BuildType({
                 }
             }
         }
+    }
+})
+
+object DeployToCloud : BuildType({
+    name = "Deploy to cloud"
+
+    vcs {
+        root(HttpsGithubComMczyjsSpringPetclinicsRefsHeadsMain1)
+    }
+
+    triggers {
+        vcs {
+        }
+    }
+
+    features {
+        perfmon {
+        }
+    }
+})
+
+object HttpsGithubComMczyjsSpringPetclinicsRefsHeadsMain1 : GitVcsRoot({
+    name = "https://github.com/mczyjs/spring-petclinics#refs/heads/main (1)"
+    url = "https://github.com/mczyjs/spring-petclinics"
+    branch = "refs/heads/main"
+    branchSpec = "refs/heads/*"
+    authMethod = password {
+        userName = "mczyjs"
+        password = "credentialsJSON:404c13d0-f31f-4950-9e8d-40dc197283db"
     }
 })
