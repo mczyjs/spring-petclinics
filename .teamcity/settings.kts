@@ -1,6 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.PullRequests
 import jetbrains.buildServer.configs.kotlin.buildFeatures.commitStatusPublisher
+import jetbrains.buildServer.configs.kotlin.buildFeatures.jiraCloudIntegration
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildFeatures.pullRequests
 import jetbrains.buildServer.configs.kotlin.buildSteps.SSHUpload
@@ -123,6 +124,9 @@ object DeployToCloud : BuildType({
 
     features {
         perfmon {
+        }
+        jiraCloudIntegration {
+            issueTrackerConnectionId = "PROJECT_EXT_9"
         }
     }
 })
