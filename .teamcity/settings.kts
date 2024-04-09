@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.PullRequests
+import jetbrains.buildServer.configs.kotlin.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildFeatures.pullRequests
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
@@ -73,6 +74,15 @@ object Build : BuildType({
                     token = "credentialsJSON:404c13d0-f31f-4950-9e8d-40dc197283db"
                 }
                 filterAuthorRole = PullRequests.GitHubRoleFilter.MEMBER
+            }
+        }
+        commitStatusPublisher {
+            vcsRootExtId = "${DslContext.settingsRoot.id}"
+            publisher = github {
+                githubUrl = "https://api.github.com"
+                authType = personalToken {
+                    token = "credentialsJSON:404c13d0-f31f-4950-9e8d-40dc197283db"
+                }
             }
         }
     }
