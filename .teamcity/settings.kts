@@ -1,6 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
+import jetbrains.buildServer.configs.kotlin.projectFeatures.jira
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -29,6 +30,19 @@ version = "2024.03"
 project {
 
     buildType(Build)
+
+    features {
+        jira {
+            id = "PROJECT_EXT_9"
+            displayName = "Demo"
+            host = "https://xdatatech-team-a1bchh7kh5hr.atlassian.net/"
+            userName = "mazs@xdatatech.com"
+            password = "credentialsJSON:2105bb63-daf6-4d74-b953-2d340208d34e"
+            projectKeys = "ST"
+            cloudClientID = "eVHIFwnymcrevK1Q90YJwiUZPHC1SE5g"
+            cloudSecret = "credentialsJSON:b78d52a3-c866-459d-92bc-db655bfa8d39"
+        }
+    }
 }
 
 object Build : BuildType({
