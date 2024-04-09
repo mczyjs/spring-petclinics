@@ -138,6 +138,11 @@ object DeployToCloud : BuildType({
             buildFinishedSuccessfully = true
         }
     }
+
+    dependencies {
+        snapshot(Build) {
+        }
+    }
 })
 
 object HttpsGithubComMczyjsSpringPetclinicsRefsHeadsMain1 : GitVcsRoot({
