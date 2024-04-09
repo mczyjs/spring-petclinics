@@ -70,7 +70,7 @@ object Build : BuildType({
     steps {
         maven {
             id = "Maven2"
-            goals = "clean test package spring-javaformat:apply"
+            goals = "clean test package"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
             jdkHome = "%env.JDK_17_0%"
         }
