@@ -131,6 +131,7 @@ object DeployToCloud : BuildType({
             issueTrackerConnectionId = "PROJECT_EXT_9"
         }
         notifications {
+            enabled = false
             notifierSettings = emailNotifier {
                 email = "mazs@xdatatech.com"
             }
