@@ -60,6 +60,9 @@ project {
 object Build : BuildType({
     name = "Build"
 
+    artifactRules = "target/*.jar"
+    publishArtifacts = PublishMode.SUCCESSFUL
+
     vcs {
         root(DslContext.settingsRoot)
     }
