@@ -72,7 +72,7 @@ object Build : BuildType({
             id = "Maven2"
             goals = "clean test package"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
-            jdkHome = "%env.JDK_17_0%"
+            jdkHome = "%env.JDK_17_0_x64%"
         }
     }
 
