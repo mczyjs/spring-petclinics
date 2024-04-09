@@ -128,15 +128,6 @@ object DeployToCloud : BuildType({
         jiraCloudIntegration {
             issueTrackerConnectionId = "PROJECT_EXT_9"
         }
-        commitStatusPublisher {
-            vcsRootExtId = "${HttpsGithubComMczyjsSpringPetclinicsRefsHeadsMain1.id}"
-            publisher = github {
-                githubUrl = "https://api.github.com"
-                authType = personalToken {
-                    token = "credentialsJSON:404c13d0-f31f-4950-9e8d-40dc197283db"
-                }
-            }
-        }
         pullRequests {
             vcsRootExtId = "${HttpsGithubComMczyjsSpringPetclinicsRefsHeadsMain1.id}"
             provider = github {
