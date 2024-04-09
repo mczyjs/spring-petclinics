@@ -59,7 +59,7 @@ public class PetClinicIntegrationTests {
 
 	@Test
 	void testDummyAssertion() {
-		assertEquals("1", "1");
+		assertEquals("1", "2");
 	}
 
 	public static void main(String[] args) {
