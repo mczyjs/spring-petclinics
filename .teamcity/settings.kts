@@ -140,7 +140,13 @@ object DeployToCloud : BuildType({
     }
 
     dependencies {
-        snapshot(Build) {
+        dependency(Build) {
+            snapshot {
+            }
+
+            artifacts {
+                artifactRules = "spring-petclinic-*.jar"
+            }
         }
     }
 })
