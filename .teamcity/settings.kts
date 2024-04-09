@@ -2,6 +2,7 @@ import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.PullRequests
 import jetbrains.buildServer.configs.kotlin.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.buildFeatures.jiraCloudIntegration
+import jetbrains.buildServer.configs.kotlin.buildFeatures.notifications
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildFeatures.pullRequests
 import jetbrains.buildServer.configs.kotlin.buildSteps.SSHUpload
@@ -127,6 +128,14 @@ object DeployToCloud : BuildType({
         }
         jiraCloudIntegration {
             issueTrackerConnectionId = "PROJECT_EXT_9"
+        }
+        notifications {
+            notifierSettings = emailNotifier {
+                email = "mazs@xdatatech.com"
+            }
+            buildStarted = true
+            buildFailed = true
+            buildFinishedSuccessfully = true
         }
     }
 })
