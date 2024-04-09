@@ -115,7 +115,7 @@ object DeployToCloud : BuildType({
             targetUrl = "124.71.5.227:/root/target/"
             authMethod = password {
                 username = "root"
-                password = "credentialsJSON:d44289e4-051e-4114-84d3-c2efb947fbf0"
+                password = "credentialsJSON:932dabb5-0818-4d5e-b3dd-9a3447bfbbab"
             }
         }
     }
