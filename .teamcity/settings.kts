@@ -117,6 +117,7 @@ object DeployToCloud : BuildType({
 
     triggers {
         vcs {
+            triggerRules = "-:.teamcity/**"
         }
     }
 
