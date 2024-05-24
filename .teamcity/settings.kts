@@ -110,6 +110,7 @@ object DeployToCloud : BuildType({
     steps {
         sshUpload {
             id = "ssh_deploy_runner"
+            enabled = false
             transportProtocol = SSHUpload.TransportProtocol.SCP
             sourcePath = "*.jar"
             targetUrl = "124.71.5.227:/root/target/"
