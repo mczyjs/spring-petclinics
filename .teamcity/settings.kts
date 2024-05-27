@@ -115,6 +115,7 @@ object DeployToCloud : BuildType({
 
     vcs {
         root(HttpsGithubComMczyjsSpringPetclinicsRefsHeadsMain1)
+        root(DslContext.settingsRoot)
     }
 
     steps {
