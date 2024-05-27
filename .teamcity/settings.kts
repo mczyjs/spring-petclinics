@@ -114,7 +114,6 @@ object DeployToCloud : BuildType({
     name = "Deploy to cloud"
 
     vcs {
-        root(HttpsGithubComMczyjsSpringPetclinicsRefsHeadsMain1)
         root(DslContext.settingsRoot)
     }
 
