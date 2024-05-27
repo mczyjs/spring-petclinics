@@ -8,7 +8,6 @@ import jetbrains.buildServer.configs.kotlin.buildFeatures.pullRequests
 import jetbrains.buildServer.configs.kotlin.buildSteps.SSHUpload
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.buildSteps.sshUpload
-import jetbrains.buildServer.configs.kotlin.projectFeatures.awsConnection
 import jetbrains.buildServer.configs.kotlin.projectFeatures.jira
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
@@ -42,15 +41,6 @@ project {
     buildType(DeployToCloud)
 
     features {
-        awsConnection {
-            id = "AmazonWebServicesAws"
-            name = "Amazon Web Services (AWS)"
-            credentialsType = static {
-                accessKeyId = "1"
-                secretAccessKey = "credentialsJSON:05a477aa-fd63-4155-9e78-b552d42ce989"
-            }
-            allowInBuilds = false
-        }
         jira {
             id = "PROJECT_EXT_9"
             displayName = "Demo"
