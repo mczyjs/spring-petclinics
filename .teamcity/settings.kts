@@ -113,8 +113,8 @@ object DeployToCloud : BuildType({
             sourcePath = "*.jar"
             targetUrl = "8.130.119.50:/root/target/"
             authMethod = password {
-                username = "root"
-                password = "credentialsJSON:a34214a0-8828-47dc-b087-153b889b0508"
+                username = "admin"
+                password = "credentialsJSON:9e66ead5-af7b-413c-9f49-09591f4b0d32"
             }
         }
     }
