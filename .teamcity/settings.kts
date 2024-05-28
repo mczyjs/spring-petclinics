@@ -109,10 +109,10 @@ object DeployToCloud : BuildType({
             enabled = false
             transportProtocol = SSHUpload.TransportProtocol.SCP
             sourcePath = "*.jar"
-            targetUrl = "124.71.5.227:/root/target/"
+            targetUrl = "8.130.119.50:/root/target/"
             authMethod = password {
                 username = "root"
-                password = "credentialsJSON:932dabb5-0818-4d5e-b3dd-9a3447bfbbab"
+                password = "credentialsJSON:a34214a0-8828-47dc-b087-153b889b0508"
             }
         }
     }
