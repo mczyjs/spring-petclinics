@@ -1,3 +1,2 @@
 test-jira
 test-teamcity
-test-github
