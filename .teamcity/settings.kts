@@ -93,6 +93,9 @@ object Build : BuildType({
                 }
             }
         }
+        jiraCloudIntegration {
+            issueTrackerConnectionId = "PROJECT_EXT_9"
+        }
     }
 })
 
