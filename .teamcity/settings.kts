@@ -126,6 +126,7 @@ object DeployToCloud : BuildType({
         perfmon {
         }
         jiraCloudIntegration {
+            enabled = false
             issueTrackerConnectionId = "PROJECT_EXT_9"
         }
         notifications {
